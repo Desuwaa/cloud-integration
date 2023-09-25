@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Contact from './components/Contact';
+import Map from './components/Maps';
 
-function App() {
+const location = {
+  address: 'Lagos NG, 9 Emma Abimbola Cole, Lekki Phase 1 106104, Street',
+  lat: 6.4426349, // Latitude of your desired center
+  lng: 3.4760261, // Longitude of your desired center
+} // our location object from earlier
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Map location={location} zoomLevel={17} /> 
+      <Contact />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
